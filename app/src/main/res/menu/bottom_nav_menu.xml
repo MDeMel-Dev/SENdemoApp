@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_today"
+        android:icon="@drawable/ic_baseline_wysiwyg_24"
+        android:title="@string/today" />
+
+    <item
+        android:id="@+id/navigation_news"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/news" />
+
+    <item
+        android:id="@+id/navigation_scheduele"
+        android:icon="@drawable/ic_baseline_calendar_today_24"
+        android:title="@string/scheduele" />
+
+    <item
+        android:id="@+id/navigation_players"
+        android:icon="@drawable/ic_baseline_people_24"
+        android:title="@string/players" />
+
+    <item
+        android:id="@+id/navigation_tickets"
+        android:icon="@drawable/ic_baseline_confirmation_number_24"
+        android:title="@string/ticket" />
+
+</menu>

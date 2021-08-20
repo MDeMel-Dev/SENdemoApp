@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">SENdemoApp</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="players">Players</string>
+    <string name="ticket">Ticket</string>
+    <string name="scheduele">Scheduele</string>
+    <string name="news">News</string>
+    <string name="today">Today</string>
+</resources>
