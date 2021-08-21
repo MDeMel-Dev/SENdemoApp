@@ -24,9 +24,11 @@ class TicketsFragment : Fragment() {
     private var _binding: FragmentTicketsBinding? = null
     private val binding get() = _binding!!
 
+    // REFERENCING QR ZOOM FUNCTION FROM UTIL CLASS
     private val setZoomListener: (View) -> Unit = { item ->
         util.setZoomListener(item)
     }
+    //PASSING LISTENER AND FUNCTION INVOCATION OVER TO ADAPTER AND THE SUBSEQUENTLY TO VIEWHOLDER TO BIND WITH IMAGEVIEW
     private val adapter = TicketAdapter(setZoomListener)
 
 
@@ -43,11 +45,13 @@ class TicketsFragment : Fragment() {
 
         binding.ticketRecycler.adapter = adapter
 
+        // OBSERVE VIEWMODEL MAIN DATA OBJECT AND PASS DATA TO THE ADAPTER
         ticketsViewModel.tickets.observe(viewLifecycleOwner, Observer {
             adapter.data = it as ArrayList<Ticket>
             binding.ticketRecycler.adapter = adapter
         })
 
+        // REFRESH DATA CALL WITH COROUTINES
         binding.button.setOnClickListener(){
            util.animate(binding.button.drawable)
             lifecycleScope.launch {

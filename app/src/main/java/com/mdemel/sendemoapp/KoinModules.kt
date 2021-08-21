@@ -8,7 +8,7 @@ import org.koin.dsl.module
 
 val koinModule = module {
 
-    // single instance of HelloRepository
+    // SINGLE INSTANCE OF THE TICKET-REPOSITORY
     single<TicketRepository> { TicketRepository(get()) }
 
     viewModel { TicketsViewModel(get()) }

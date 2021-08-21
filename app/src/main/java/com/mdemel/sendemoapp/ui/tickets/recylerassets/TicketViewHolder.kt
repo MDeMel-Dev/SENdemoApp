@@ -26,15 +26,17 @@ class TicketViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     fun bind(ticket: Ticket, zoomClickListener: (View) -> Unit) {
 
-        name.text = (ticket.firstname + ticket.lastname)
+        name.text = (ticket.firstname + " " + ticket.lastname)
         membership.text = ticket.membership
         season.text = ticket.season
         sec.text = ticket.section
         row.text = ticket.row
         seat.text = ticket.seat
 
+        // NEW ITEM ENTRANCE ANIMATION
         setAnimation(itemView, position);
 
+        // SET THE ZOOM FUNCTION LISTNER
         qrimage.setOnClickListener { zoomClickListener(itemView) }
     }
 

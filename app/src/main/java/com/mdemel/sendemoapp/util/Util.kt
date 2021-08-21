@@ -25,6 +25,7 @@ import java.security.AccessController.getContext
 
 class Util {
 
+    // REFRESH BUTTON ANIMATION
     public fun animate(v: Drawable) {
         val d: Drawable = v
         if (Build.VERSION.SDK_INT >= 21 && d is AnimatedVectorDrawable) {
@@ -38,6 +39,7 @@ class Util {
         }
     }
 
+    // FOR FUTURE REFERENCE INCASE OF THE NEED OF A CALL BACK
     private fun Animatable2.registerAnimationCallback() {
         //ticketsViewModel.refreshData()
     }
@@ -46,6 +48,7 @@ class Util {
         //ticketsViewModel.refreshData()
     }
 
+    //ZOOM FUNCTION FOR QR CODE ON CLICK
     @SuppressLint("ClickableViewAccessibility")
     fun setZoomListener(v: View) {
             var uri: Uri? = null

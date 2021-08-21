@@ -5,10 +5,11 @@ import org.json.JSONObject
 class DeriveJson(json: String?) : JSONObject(json) {
 //    val type: String? = this.optString("type")
     val data = this.optJSONArray("memberships")
-        .let { 0.until(it.length()).map { i -> it.optJSONObject(i) } } // returns an array of JSONObject
-        .map { Ticket(it.toString()) } // transforms each JSONObject of the array into Foo
+        .let { 0.until(it.length()).map { i -> it.optJSONObject(i) } } // RETURNS AN ARRAY OF JSONOBJECT
+        .map { Ticket(it.toString()) } // TRANSFORMS EACH JSON ARRAY OBJECT INTO TICKET JSON OBJECT
 }
 
+// DESERIALIZING RESULTS
 class Ticket(json: String) : JSONObject(json) {
     val firstname get() = this.optString("firstName")
     val lastname get() = this.optString("lastName")
