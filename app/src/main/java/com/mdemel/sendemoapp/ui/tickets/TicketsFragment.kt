@@ -15,15 +15,16 @@ import com.mdemel.sendemoapp.data.Ticket
 import com.mdemel.sendemoapp.databinding.FragmentTicketsBinding
 import com.mdemel.sendemoapp.ui.scheduele.TicketsViewModel
 import com.mdemel.sendemoapp.ui.tickets.recylerassets.TicketAdapter
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class TicketsFragment : Fragment() {
 
-    private lateinit var ticketsViewModel: TicketsViewModel
+    private val ticketsViewModel: TicketsViewModel by viewModel()
     private var _binding: FragmentTicketsBinding? = null
 
     private val binding get() = _binding!!
 
-    private lateinit var ticketRecyclerView: RecyclerView
+    //private lateinit var ticketRecyclerView: RecyclerView
     private val adapter = TicketAdapter()
 
 
@@ -32,26 +33,19 @@ class TicketsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        ticketsViewModel =
-            ViewModelProvider(this.requireActivity()).get(TicketsViewModel::class.java)
 
         _binding = FragmentTicketsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         binding.ticketRecycler.adapter = adapter
-//        adapter.data = (ticketsViewModel.getData() as? ArrayList<Ticket>)!!
-//        adapter.notifyDataSetChanged()
 
-//        val textView: TextView = binding.textNotifications
-//        ticketsViewModel.text.observe(viewLifecycleOwner, Observer {
-//            textView.text = it
-//        })
+        ticketsViewModel.tickets.observe(viewLifecycleOwner, Observer {
+            adapter.data = it as ArrayList<Ticket>
+            binding.ticketRecycler.adapter = adapter
+        })
 
         binding.button.setOnClickListener(){
-            var data = ticketsViewModel.getData(this.requireActivity().applicationContext) as ArrayList<Ticket>
-            Toast.makeText(this.requireContext(), "${data[0].firstname}", Toast.LENGTH_SHORT).show()
-            adapter.data = data
-            binding.ticketRecycler.adapter = adapter
+           ticketsViewModel.refreshData()
         }
         return root
     }

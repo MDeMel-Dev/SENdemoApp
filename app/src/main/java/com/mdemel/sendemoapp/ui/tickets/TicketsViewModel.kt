@@ -6,22 +6,26 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.mdemel.sendemoapp.data.Ticket
 import com.mdemel.sendemoapp.repository.TicketRepository
+import org.koin.java.KoinJavaComponent.inject
 
-class TicketsViewModel : ViewModel() {
+class TicketsViewModel(val repo : TicketRepository) : ViewModel() {
 
     private val _tickets = MutableLiveData<List<Ticket>>().apply {
         value = null
     }
-    val text: LiveData<List<Ticket>> = _tickets
+    val tickets: LiveData<List<Ticket>> = _tickets
 
-    private val repository = TicketRepository()
-
-    fun getData(context: Context): List<Ticket>
+    fun getData(): List<Ticket>
     {
-        return repository.getTickets(context)
+        return repo.getTickets()
+    }
+
+    fun refreshData()
+    {
+        _tickets.value = getData()
     }
 
     init {
-        _tickets = getData()
+        _tickets.value = getData()
     }
 }
