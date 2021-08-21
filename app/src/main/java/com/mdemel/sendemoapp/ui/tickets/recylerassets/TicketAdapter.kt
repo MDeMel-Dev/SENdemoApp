@@ -3,14 +3,11 @@ package com.mdemel.sendemoapp.ui.tickets.recylerassets
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.mdemel.sendemoapp.R
 import com.mdemel.sendemoapp.data.Ticket
 
-class TicketAdapter: RecyclerView.Adapter<TicketViewHolder>()  {
-
-
+class TicketAdapter(private val zoomClickListener: (View) -> Unit): RecyclerView.Adapter<TicketViewHolder>()  {
 
     var data =  ArrayList<Ticket>()
         set(value) {
@@ -19,11 +16,8 @@ class TicketAdapter: RecyclerView.Adapter<TicketViewHolder>()  {
         }
 
 
-
     override fun getItemCount(): Int {
-
             return data.size
-
     }
 
 
@@ -31,23 +25,14 @@ class TicketAdapter: RecyclerView.Adapter<TicketViewHolder>()  {
 
         val layoutInflater = LayoutInflater.from(parent.context)
 
-
             return TicketViewHolder(
                 layoutInflater.inflate(R.layout.ticket_view, parent, false)
             )
-
-
-
     }
 
 
     override fun onBindViewHolder(holder: TicketViewHolder, position: Int) {
-
-
-            holder.bind(data[position])
-
+            holder.bind(data[position] , zoomClickListener)
     }
-
-
 
 }

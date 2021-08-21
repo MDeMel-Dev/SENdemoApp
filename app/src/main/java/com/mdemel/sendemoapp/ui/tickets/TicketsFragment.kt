@@ -1,9 +1,5 @@
 package com.mdemel.sendemoapp.ui.tickets
 
-import android.graphics.drawable.Animatable2
-import android.graphics.drawable.AnimatedVectorDrawable
-import android.graphics.drawable.Drawable
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,8 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
-import androidx.vectordrawable.graphics.drawable.Animatable2Compat
-import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat
 import com.mdemel.sendemoapp.data.Ticket
 import com.mdemel.sendemoapp.databinding.FragmentTicketsBinding
 import com.mdemel.sendemoapp.ui.scheduele.TicketsViewModel
@@ -30,7 +24,12 @@ class TicketsFragment : Fragment() {
     private var _binding: FragmentTicketsBinding? = null
     private val binding get() = _binding!!
 
-    private val adapter = TicketAdapter()
+    private val setZoomListener: (View) -> Unit = { item ->
+        util.setZoomListener(item)
+    }
+    private val adapter = TicketAdapter(setZoomListener)
+
+
 
 
     override fun onCreateView(
@@ -57,7 +56,6 @@ class TicketsFragment : Fragment() {
             }
 
         }
-
         return root
     }
 

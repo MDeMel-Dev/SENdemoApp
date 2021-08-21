@@ -11,12 +11,16 @@
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
         android:visibility="visible"
+        android:clickable="true"
+        android:background="?android:attr/selectableItemBackground"
+        android:focusable="true"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <ImageView
         android:id="@+id/button"
