@@ -6,12 +6,13 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.mdemel.sendemoapp.R
+import com.mdemel.sendemoapp.data.Ticket
 
 class TicketAdapter: RecyclerView.Adapter<TicketViewHolder>()  {
 
 
 
-    var data =  ArrayList<String>()
+    var data =  ArrayList<Ticket>()
         set(value) {
             field = value
             notifyDataSetChanged()
@@ -43,7 +44,7 @@ class TicketAdapter: RecyclerView.Adapter<TicketViewHolder>()  {
     override fun onBindViewHolder(holder: TicketViewHolder, position: Int) {
 
 
-            (holder as TicketViewHolder).bind(data[position])
+            holder.bind(data[position])
 
     }
 

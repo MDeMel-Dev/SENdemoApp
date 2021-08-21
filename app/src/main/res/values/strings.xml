@@ -8,4 +8,7 @@
     <string name="scheduele">Scheduele</string>
     <string name="news">News</string>
     <string name="today">Today</string>
+    <string name="seat">SEAT</string>
+    <string name="row">ROW</string>
+    <string name="sec">SEC</string>
 </resources>

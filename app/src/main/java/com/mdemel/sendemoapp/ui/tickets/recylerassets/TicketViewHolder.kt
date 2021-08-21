@@ -4,6 +4,7 @@ import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.mdemel.sendemoapp.R
+import com.mdemel.sendemoapp.data.Ticket
 
 class TicketViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -14,9 +15,10 @@ class TicketViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     var row: TextView = itemView.findViewById(R.id.tk_row)
     var seat: TextView = itemView.findViewById(R.id.tk_seat)
 
-    fun bind(ticket: String) {
 
-        name.text = ticket.name
+    fun bind(ticket: Ticket) {
+
+        name.text = (ticket.firstname + ticket.lastname)
         membership.text = ticket.membership
         season.text = ticket.season
         sec.text = ticket.section
