@@ -1,30 +1,35 @@
 package com.mdemel.sendemoapp.ui.tickets
 
+import android.graphics.drawable.Animatable2
+import android.graphics.drawable.AnimatedVectorDrawable
+import android.graphics.drawable.Drawable
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.lifecycle.lifecycleScope
+import androidx.vectordrawable.graphics.drawable.Animatable2Compat
+import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat
 import com.mdemel.sendemoapp.data.Ticket
 import com.mdemel.sendemoapp.databinding.FragmentTicketsBinding
 import com.mdemel.sendemoapp.ui.scheduele.TicketsViewModel
 import com.mdemel.sendemoapp.ui.tickets.recylerassets.TicketAdapter
+import com.mdemel.sendemoapp.util.Util
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
+
 
 class TicketsFragment : Fragment() {
 
     private val ticketsViewModel: TicketsViewModel by viewModel()
+    private val util = Util()
     private var _binding: FragmentTicketsBinding? = null
-
     private val binding get() = _binding!!
 
-    //private lateinit var ticketRecyclerView: RecyclerView
     private val adapter = TicketAdapter()
 
 
@@ -45,8 +50,14 @@ class TicketsFragment : Fragment() {
         })
 
         binding.button.setOnClickListener(){
-           ticketsViewModel.refreshData()
+           util.animate(binding.button.drawable)
+            lifecycleScope.launch {
+                delay(1100L)
+                ticketsViewModel.refreshData()
+            }
+
         }
+
         return root
     }
 
@@ -57,3 +68,6 @@ class TicketsFragment : Fragment() {
         _binding = null
     }
 }
+
+
+

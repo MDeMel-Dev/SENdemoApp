@@ -8,4 +8,5 @@
     <string name="seat">SEAT</string>
     <string name="row">ROW</string>
     <string name="sec">SEC</string>
+    <string name="refresh">refresh</string>
 </resources>

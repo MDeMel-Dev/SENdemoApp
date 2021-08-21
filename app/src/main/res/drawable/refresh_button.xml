@@ -1,0 +1,285 @@
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+  <aapt:attr name="android:drawable">
+  <vector
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+  <path
+      android:name="five"
+      android:pathData="M50,50m-45,0a45,45 0,1 1,90 0a45,45 0,1 1,-90 0"
+      android:fillColor="#192874"/>
+  <group>
+    <clip-path
+        android:pathData="M50,50m-45,0a45,45 0,1 1,90 0a45,45 0,1 1,-90 0"/>
+    <path
+        android:name="six"
+        android:pathData="M27.5,47.5L47.5,27.5L97.5,77.5L77.5,97.5L27.5,47.5"
+        android:fillColor="#2439a6"/>
+    <path
+        android:name="one"
+        android:pathData="M27.5,27.5l20,0l0,20l-20,0z"
+        android:fillColor="#489aba"/>
+    <path
+        android:name="seven"
+        android:pathData="M52.5,47.5L72.5,27.5L122.5,77.5L102.5,97.5L52.5,47.5"
+        android:fillColor="#2439a6"/>
+    <path
+        android:name="two"
+        android:pathData="M52.5,27.5l20,0l0,20l-20,0z"
+        android:fillColor="#ffffff"/>
+    <path
+        android:name="eight"
+        android:pathData="M27.5,72.5L47.5,52.5L97.5,102.5L77.5,122.5L27.5,72.5"
+        android:fillColor="#2439a6"/>
+    <path
+        android:name="four"
+        android:pathData="M27.5,52.5l20,0l0,20l-20,0z"
+        android:fillColor="#ffffff"/>
+    <path
+        android:name="nine"
+        android:pathData="M52.5,72.5L72.5,52.5L122.5,102.5L102.5,122.5L52.5,72.5"
+        android:fillColor="#2439a6"/>
+    <path
+        android:name="three"
+        android:pathData="M52.5,52.5l20,0l0,20l-20,0z"
+        android:fillColor="#489aba"/>
+
+  </group>
+</vector>
+  </aapt:attr>
+
+  <target android:name="one">
+    <aapt:attr name="android:animation">
+      <set>
+        <objectAnimator
+            android:startOffset="0"
+            android:duration="100"
+            android:propertyName="fillAlpha"
+            android:valueFrom="1"
+            android:valueTo="0" />
+        <objectAnimator
+            android:startOffset="100"
+            android:duration="200"
+            android:propertyName="fillAlpha"
+            android:valueFrom="0"
+            android:valueTo="1" />
+      </set>
+    </aapt:attr>
+  </target>
+
+  <target android:name="two">
+    <aapt:attr name="android:animation">
+      <set>
+        <objectAnimator
+            android:startOffset="100"
+            android:duration="200"
+            android:propertyName="fillAlpha"
+            android:valueFrom="1"
+            android:valueTo="0" />
+        <objectAnimator
+            android:startOffset="200"
+            android:duration="300"
+            android:propertyName="fillAlpha"
+            android:valueFrom="0"
+            android:valueTo="1" />
+      </set>
+    </aapt:attr>
+  </target>
+
+  <target android:name="three">
+    <aapt:attr name="android:animation">
+      <set>
+        <objectAnimator
+            android:startOffset="200"
+            android:duration="300"
+            android:propertyName="fillAlpha"
+            android:valueFrom="1"
+            android:valueTo="0" />
+        <objectAnimator
+            android:startOffset="300"
+            android:duration="400"
+            android:propertyName="fillAlpha"
+            android:valueFrom="0"
+            android:valueTo="1" />
+      </set>
+    </aapt:attr>
+  </target>
+
+  <target android:name="four">
+    <aapt:attr name="android:animation">
+      <set>
+        <objectAnimator
+            android:startOffset="300"
+            android:duration="400"
+            android:propertyName="fillAlpha"
+            android:valueFrom="1"
+            android:valueTo="0" />
+        <objectAnimator
+            android:startOffset="400"
+            android:duration="500"
+            android:propertyName="fillAlpha"
+            android:valueFrom="0"
+            android:valueTo="1" />
+      </set>
+    </aapt:attr>
+  </target>
+
+  <target android:name="one">
+    <aapt:attr name="android:animation">
+      <set>
+        <objectAnimator
+            android:startOffset="400"
+            android:duration="500"
+            android:propertyName="fillAlpha"
+            android:valueFrom="1"
+            android:valueTo="0" />
+        <objectAnimator
+            android:startOffset="500"
+            android:duration="600"
+            android:propertyName="fillAlpha"
+            android:valueFrom="0"
+            android:valueTo="1" />
+      </set>
+    </aapt:attr>
+  </target>
+
+  <target android:name="two">
+    <aapt:attr name="android:animation">
+      <set>
+        <objectAnimator
+            android:startOffset="500"
+            android:duration="600"
+            android:propertyName="fillAlpha"
+            android:valueFrom="1"
+            android:valueTo="0" />
+        <objectAnimator
+            android:startOffset="600"
+            android:duration="700"
+            android:propertyName="fillAlpha"
+            android:valueFrom="0"
+            android:valueTo="1" />
+      </set>
+    </aapt:attr>
+  </target>
+
+  <target android:name="three">
+    <aapt:attr name="android:animation">
+      <set>
+        <objectAnimator
+            android:startOffset="600"
+            android:duration="700"
+            android:propertyName="fillAlpha"
+            android:valueFrom="1"
+            android:valueTo="0" />
+        <objectAnimator
+            android:startOffset="700"
+            android:duration="800"
+            android:propertyName="fillAlpha"
+            android:valueFrom="0"
+            android:valueTo="1" />
+      </set>
+    </aapt:attr>
+  </target>
+
+  <target android:name="five">
+    <aapt:attr name="android:animation">
+      <set>
+        <objectAnimator
+            android:startOffset="700"
+            android:duration="800"
+            android:propertyName="fillAlpha"
+            android:valueFrom="1"
+            android:valueTo="0" />
+        <objectAnimator
+            android:startOffset="800"
+            android:duration="900"
+            android:propertyName="fillAlpha"
+            android:valueFrom="0"
+            android:valueTo="1" />
+      </set>
+    </aapt:attr>
+  </target>
+
+  <target android:name="six">
+    <aapt:attr name="android:animation">
+      <set>
+        <objectAnimator
+            android:startOffset="700"
+            android:duration="800"
+            android:propertyName="fillAlpha"
+            android:valueFrom="1"
+            android:valueTo="0" />
+        <objectAnimator
+            android:startOffset="800"
+            android:duration="900"
+            android:propertyName="fillAlpha"
+            android:valueFrom="0"
+            android:valueTo="1" />
+      </set>
+    </aapt:attr>
+  </target>
+
+  <target android:name="seven">
+    <aapt:attr name="android:animation">
+      <set>
+        <objectAnimator
+            android:startOffset="700"
+            android:duration="800"
+            android:propertyName="fillAlpha"
+            android:valueFrom="1"
+            android:valueTo="0" />
+        <objectAnimator
+            android:startOffset="800"
+            android:duration="900"
+            android:propertyName="fillAlpha"
+            android:valueFrom="0"
+            android:valueTo="1" />
+      </set>
+    </aapt:attr>
+  </target>
+
+  <target android:name="eight">
+    <aapt:attr name="android:animation">
+      <set>
+        <objectAnimator
+            android:startOffset="700"
+            android:duration="800"
+            android:propertyName="fillAlpha"
+            android:valueFrom="1"
+            android:valueTo="0" />
+        <objectAnimator
+            android:startOffset="800"
+            android:duration="900"
+            android:propertyName="fillAlpha"
+            android:valueFrom="0"
+            android:valueTo="1" />
+      </set>
+    </aapt:attr>
+  </target>
+
+  <target android:name="nine">
+    <aapt:attr name="android:animation">
+      <set>
+        <objectAnimator
+            android:startOffset="700"
+            android:duration="800"
+            android:propertyName="fillAlpha"
+            android:valueFrom="1"
+            android:valueTo="0" />
+        <objectAnimator
+            android:startOffset="800"
+            android:duration="900"
+            android:propertyName="fillAlpha"
+            android:valueFrom="0"
+            android:valueTo="1" />
+      </set>
+    </aapt:attr>
+  </target>
+
+
+
+
+
+</animated-vector>
